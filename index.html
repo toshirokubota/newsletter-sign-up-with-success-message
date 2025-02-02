@@ -22,7 +22,7 @@
     <div class="container">
       <div class="banner">
         <picture>
-          <source srcset="./assets/images/illustration-sign-up-desktop.svg" media="(min-width: 800px)">
+          <source srcset="./assets/images/illustration-sign-up-desktop.svg" media="(min-width: 700px)">
           <source srcset="./assets/images/illustration-sign-up-mobile.svg" media="(min-width: 100px)">
           <img src="./assets/images/illustration-sign-up-mobile.svg" alt="banner image"/>
         </picture>
@@ -47,8 +47,11 @@
           </li>
         </ul>
         <form id="form">
-          <label for="email" class="text-bodySB">Email address</label>
-          <input type="email" name="email" id="email" class="text-body" placeholder="email@company.com">
+          <div class="input-group">
+            <label for="email" class="text-bodySB">Email address</label>
+            <span id="email-err">Valid email required</span>
+            <input type="email" name="email" id="email" class="text-body" placeholder="email@company.com" required>
+          </div>
           <input type="submit" id="submit" class="text-body" value="Subscribe to monthly newsletter">
         </form>
       </div>
@@ -63,7 +66,7 @@
           Thanks for subscribing!
         </h1>
         <h2 class="text-body">
-          A confirmation email has been sent to <emp>ash@loremcompany.com</emp>. 
+          A confirmation email has been sent to <emp id="user-email" aria-live="polite"></emp>. 
           Please open it and click the button inside to confirm your subscription.  
         </h2>
         <button id="dismiss">Dismiss message</button> 
