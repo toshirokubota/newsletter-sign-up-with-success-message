@@ -39,20 +39,15 @@
     font-family: RobotoBold;
     line-height: 18px;
 }
-body {
-    background-color: var(--charcoal-grey);
-}
 main {
     background-color: var(--white);
-    margin: 5rem auto;
-    max-width: 900px;
 }
 .container {
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items:center;
-    margin: .5em;
+    /* margin: .5em; */
 }
 .banner {
     width: 100%;
@@ -63,8 +58,8 @@ main {
 .content {
     display:flex;
     flex-direction: column;
-    justify-content:center;
-    align-items:center;
+    /* justify-content:center;
+    align-items:center; */
     margin: 1.5em;
 }
 .content > * + * {
@@ -127,10 +122,10 @@ form > * {
     background-color: var(--dark-slate-grey);
     color: var(--white);
 }
-#email:hover, #email:focus, #dismiss:hover, #dismiss:focus {
+#email:hover, #email:focus {
     cursor: pointer;
 }
-#submit:hover, #submit:focus {
+#submit:hover, #submit:focus, #dismiss:hover, #dismiss:focus {
     cursor: pointer;
     background-image: linear-gradient(to left, #FF6A3A, #FF527B);
 }
@@ -151,7 +146,7 @@ form > * {
 #confirmation img {
     width: 64px;
     height: 64px;
-    margin-bottom: 64px;
+    /* margin-bottom: 2em; */
 }
 #confirmation h2 > emp {
     font-family: RobotoBold;
@@ -163,9 +158,21 @@ form > * {
     margin-bottom: 2rem;
 }
 #dismiss {
-    margin-top: 250px;
+    /* margin-top: 300px; */
+    position: fixed;
+    bottom: 48px;
+    left: 1.5em;
+    right: 1.5em;
+    width: calc(100% - 3em);
 }
 @media only screen and (min-width: 700px) {
+    body {
+        background-color: var(--charcoal-grey);
+    }
+    main {
+        margin: 5rem auto;
+        max-width: 900px;
+    }
     main {
         padding: 24px;
         border-radius: 36px;
@@ -183,15 +190,23 @@ form > * {
     #confirmation {
         background-color: var(--charcoal-grey);
     }    
-    #confirmation > .container {
-        display: flex;
-        flex-direction: column;
+    #confirmation .success {
+        /* display: flex;
+        flex-direction: column; */
         width: 500px;
         height: 520px;
         margin: 50px auto;
-        padding: 64px;
+        padding: 24px;
         background-color: var(--white);
         border: solid 1pt var(--dark-slate-grey);
         border-radius: 36px;
+        position: relative;
+    }
+    #dismiss {
+        position: absolute;
+        /* bottom: 16px; */
+        left: 3em;
+        right: 3em;
+        width: calc(100% - 6em);
     }
 }
